@@ -1,0 +1,11 @@
+// this file only uses for IDE to setup importing files
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@/*": ["*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

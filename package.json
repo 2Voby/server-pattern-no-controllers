@@ -1,0 +1,44 @@
+{
+	"name": "server-pattern",
+	"version": "2.0.0",
+	"description": "Backend pattern — modernized",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js",
+		"start:cron": "node cron/cron-server.js",
+		"dev": "concurrently -n api,cron -c cyan,green \"nodemon server/server.js\" \"nodemon server-cron/server-cron.js\"",
+		"dev:api": "nodemon server.js",
+		"dev:cron": "nodemon server-cron/server-cron.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bcrypt": "^5.1.1",
+		"bullmq": "^5.7.0",
+		"cookie-parser": "^1.4.7",
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.5",
+		"express": "^4.21.2",
+		"glob": "^11.0.1",
+		"helmet": "^7.1.0",
+		"ioredis": "^5.3.2",
+		"jsonwebtoken": "^9.0.2",
+		"module-alias": "^2.3.4",
+		"mongoose": "^8.9.5",
+		"node-cron": "^3.0.3",
+		"nodemailer": "^6.9.14",
+		"pino": "^9.5.0",
+		"pino-http": "^10.3.0",
+		"uuid": "^9.0.1",
+		"zod": "^3.22.4"
+	},
+	"devDependencies": {
+		"concurrently": "^9.1.2",
+		"cross-env": "^7.0.3",
+		"nodemon": "^3.1.0",
+		"pino-pretty": "^13.0.0"
+	},
+	"_moduleAliases": {
+		"@": "."
+	}
+}
