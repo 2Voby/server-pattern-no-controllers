@@ -19,6 +19,7 @@ async function main() {
 		logger.info(`[API] Listening on port ${PORT}`);
 	});
 
+
 	server.on("error", (error) => {
 		if (error.syscall !== "listen") throw error;
 		switch (error.code) {

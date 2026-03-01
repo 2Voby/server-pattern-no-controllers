@@ -5,10 +5,6 @@ const tokenService = require("@/shared/services/token-service");
 const SALT_ROUNDS = 12;
 
 const authService = {
-  /**
-   * @param {{ username, email, password }} data
-   * @param {{ User, Tokens }} db
-   */
   async register({ username, password, email }, db) {
     const existing = await db.User.findOne({
       $or: [{ username }, { email: email.toLowerCase() }],
@@ -27,10 +23,6 @@ const authService = {
     return { user: dto, tokens };
   },
 
-  /**
-   * @param {{ login, password }} data  — login is email OR username
-   * @param {{ User, Tokens }} db
-   */
   async login({ login, password }, db) {
     const user = await db.User.findOne({
       $or: [{ email: login.toLowerCase() }, { username: login }],
